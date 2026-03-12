@@ -14,7 +14,7 @@ err()   { echo -e "${RED}[✗]${NC} $1"; exit 1; }
 
 INSTALL_DIR="$HOME/.local/share/ffconvert"
 BIN_DIR="$HOME/.local/bin"
-SCRIPT_URL="https://github.com/TheBaronBlood/ffconvert/blob/main/ffconvert.py"   # ← hier deine URL eintragen
+SCRIPT_URL="https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/ffconvert.py"   # ← hier deine URL eintragen
 
 echo -e "${BOLD}"
 echo "  ███████╗███████╗ ██████╗ ██████╗ ███╗   ██╗██╗   ██╗"

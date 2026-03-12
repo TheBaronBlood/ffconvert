@@ -14,7 +14,7 @@ err()   { echo -e "${RED}[✗]${NC} $1"; exit 1; }
 
 INSTALL_DIR="$HOME/.local/share/ffconvert"
 BIN_DIR="$HOME/.local/bin"
-SCRIPT_URL="https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/ffconvert.py"   # ← hier deine URL eintragen
+SCRIPT_URL="https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/ffconvert.py"   
 
 echo -e "${BOLD}"
 echo "  ███████╗███████╗ ██████╗ ██████╗ ███╗   ██╗██╗   ██╗"
@@ -103,6 +103,28 @@ fi
 echo ""
 echo -e "${GREEN}${BOLD}✅ Installation abgeschlossen!${NC}"
 echo ""
-echo -e "  Starten mit:  ${BOLD}ffconvert${NC}"
-echo "  Oder direkt:  python3 $INSTALL_DIR/ffconvert.py"
+echo -e "  Starte FFConvert (temporär — wird nach Beenden gelöscht) ..."
+sleep 1
+$PYTHON "$INSTALL_DIR/ffconvert.py"
+
+# Nach dem Beenden: alles wieder löschen
 echo ""
+echo -e "${YELLOW}  Räume auf ...${NC}"
+
+# Launcher entfernen
+rm -f "$BIN_DIR/ffconvert"
+
+# Programm-Dateien löschen
+rm -rf "$INSTALL_DIR"
+
+# Config löschen
+rm -rf "$HOME/.ffconvert"
+
+# PATH-Zeile aus Shell-RC entfernen
+for RC in "$HOME/.bashrc" "$HOME/.zshrc"; do
+    if [ -f "$RC" ]; then
+        grep -v "# FFConvert" "$RC" | grep -v 'ffconvert' > "${RC}.tmp" && mv "${RC}.tmp" "$RC"
+    fi
+done
+
+ok "Alles bereinigt ✅"

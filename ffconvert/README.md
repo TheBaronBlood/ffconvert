@@ -2,34 +2,6 @@
 
 **Terminal UI für FFmpeg** — Cross-platform, keine GUI nötig.
 
-```
-┌─ FFConvert ──────────────────────────────────────────────────────────────────┐
-│ FFConvert                                       Terminal FFmpeg Converter     │
-├──────────────────────────────────────┬───────────────────────────────────────┤
-│ 📂  Datei-Warteschlange              │ 🎯  Zielformat                        │
-│                                      │                                       │
-│  ✅  video.mp4         4.2 MB  MP4   │  ● MP3   Audio · Universal            │
-│  ⚙   audio.m4a         1.1 MB  M4A   │  ○ WAV   Audio · Lossless             │
-│  ⏳  podcast.wav       22 MB   WAV   │  ○ FLAC  Audio · Lossless             │
-│                                      │  ○ AAC   Audio · Modern               │
-│                                      │  ○ OGG   Audio · Open                 │
-│  📥 Datei-Pfad einfügen …           │  ○ OPUS  Audio · Compressed           │
-│                                      │  ○ MP4   Video · Universal            │
-│                                      │  ────────────────────────────         │
-│                                      │  📁 Ausgabe: ~/Downloads              │
-│                                      │                                       │
-│                                      │  ▶ Konvertieren                       │
-│                                      │  📁 Durchsuchen                       │
-│                                      │  🗑 Entfernen                         │
-│                                      │  ⚙ Einstellungen                     │
-├──────────────────────────────────────┴───────────────────────────────────────┤
-│ ⚙  Konvertiere 1/3: video.mp4                                                │
-│ ████████████████████████░░░░░░░░░░░░░░░  63%                                │
-│ video.mp4  63%                                                               │
-└──────────────────────────────────────────────────────────────────────────────┘
- q Beenden  s Einstellungen  a Hinzufügen  ? Hilfe  Enter Konvertieren
-```
-
 ## Installation
 
 ### Linux / macOS
@@ -85,10 +57,6 @@ python ffconvert.py
 - [ffmpeg](https://ffmpeg.org/download.html) im PATH
 - `pip install textual`
 
-## Eigenen Server hosten
-
-Dateien (`ffconvert.py`, `install.sh`, `install.ps1`) auf einen Webserver laden
-und die `SCRIPT_URL`-Variable in den Installer-Scripts anpassen.
 
 Einfachste Option: **GitHub Releases** oder **GitHub Raw**:
 ```

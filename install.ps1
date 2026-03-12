@@ -100,6 +100,7 @@ Write-Host "ffconvert" -ForegroundColor Yellow
 Write-Host "  Oder:       " -NoNewline
 Write-Host "python $INSTALL_DIR\ffconvert.py" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "  Hinweis: PowerShell-Fenster neu starten für den ffconvert-Befehl" -ForegroundColor Gray
 Write-Host ""
-Read-Host "Enter drücken zum Beenden"
+Write-Host "  Starte FFConvert ..." -ForegroundColor Cyan
+Start-Sleep -Seconds 1
+python "$INSTALL_DIR\ffconvert.py"

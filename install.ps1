@@ -4,7 +4,7 @@
 $ErrorActionPreference = "Stop"
 
 $INSTALL_DIR = "$env:LOCALAPPDATA\FFConvert"
-$SCRIPT_URL  = "https://DEINE-URL/ffconvert.py"   # ← hier deine URL
+$SCRIPT_URL  = "https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/ffconvert.py"   # ← hier deine URL
 
 function Write-Step  { param($msg) Write-Host "[→] $msg" -ForegroundColor Cyan }
 function Write-Ok    { param($msg) Write-Host "[✓] $msg" -ForegroundColor Green }

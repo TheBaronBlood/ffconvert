@@ -101,6 +101,20 @@ Write-Host "  Oder:       " -NoNewline
 Write-Host "python $INSTALL_DIR\ffconvert.py" -ForegroundColor Yellow
 Write-Host ""
 Write-Host ""
-Write-Host "  Starte FFConvert ..." -ForegroundColor Cyan
+Write-Host "  Starte FFConvert (temporaer -- wird nach Beenden geloescht) ..." -ForegroundColor Cyan
 Start-Sleep -Seconds 1
+
 python "$INSTALL_DIR\ffconvert.py"
+
+# Nach dem Beenden: alles wieder loeschen
+Write-Host ""
+Write-Host "  Raeume auf ..." -ForegroundColor Gray
+
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+$newPath = ($userPath -split ";" | Where-Object { $_ -ne $INSTALL_DIR }) -join ";"
+[Environment]::SetEnvironmentVariable("Path", $newPath, "User")
+
+Remove-Item -Recurse -Force $INSTALL_DIR -ErrorAction SilentlyContinue
+Remove-Item -Recurse -Force "$env:USERPROFILE\.ffconvert" -ErrorAction SilentlyContinue
+
+Write-Host "  Alles bereinigt." -ForegroundColor Green

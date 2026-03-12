@@ -6,12 +6,12 @@
 
 ### Linux / macOS
 ```bash
-curl -sSL https://DEINE-URL/install.sh | bash
+curl -sSL https://DEINE-URL/](https://github.com/TheBaronBlood/ffconvert/blob/main/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 ```powershell
-irm https://DEINE-URL/install.ps1 | iex
+irm https://DEINE-URL/](https://github.com/TheBaronBlood/ffconvert/blob/main/install.ps1 | iex
 ```
 
 ### Manuell

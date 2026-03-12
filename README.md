@@ -6,12 +6,12 @@
 
 ### Linux / macOS
 ```bash
-curl -sSL https://github.com/TheBaronBlood/ffconvert/blob/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 ```powershell
-irm https://github.com/TheBaronBlood/ffconvert/blob/main/install.sh | iex
+irm https://raw.githubusercontent.com/TheBaronBlood/ffconvert/refs/heads/main/install.ps1 | iex
 ```
 
 ### Manuell
